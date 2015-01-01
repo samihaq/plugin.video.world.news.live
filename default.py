@@ -12,7 +12,7 @@ try:
 except:
     from pysqlite2 import dbapi2 as sqlite
     
-__plugin__ = "World News Live"
+__plugin__ = "World News Live SAMI UL HAQ"
 __author__ = 'Florian Neagu <michaelneagu@gmail.com>'
 __url__ = 'http://world-news-live.googlecode.com/svn/trunk'
 __date__ = '1-10-2013'
