@@ -29,6 +29,19 @@ class AlAan(BaseChannel):
     def action_play_stream(self):
         self.plugin.set_stream_url('http://alaan_hls-lh.akamaihd.net/i/alaan_ar@103399/master.m3u8')
 
+############
+## Al Aan 2 ##
+############
+        
+class AlAan(BaseChannel):
+    playable = True
+    short_name = 'alaan_sami'
+    long_name = 'Al Aan SAMI'
+    default_action = 'play_stream'
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://alaan_hls-lh.akamaihd.net/i/alaan_ar@103399/master.m3u8')
+
 ##############
 ## Antena 3 ##
 ##############
