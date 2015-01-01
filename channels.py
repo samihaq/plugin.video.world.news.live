@@ -30,17 +30,17 @@ class AlAan(BaseChannel):
         self.plugin.set_stream_url('http://alaan_hls-lh.akamaihd.net/i/alaan_ar@103399/master.m3u8')
 
 ############
-## Al Aan 2 ##
+## MTA International ##
 ############
         
 class AlAan(BaseChannel):
     playable = True
-    short_name = 'alaan_sami'
-    long_name = 'Al Aan SAMI'
+    short_name = 'MTA'
+    long_name = 'MTA International'
     default_action = 'play_stream'
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('http://alaan_hls-lh.akamaihd.net/i/alaan_ar@103399/master.m3u8')
+        self.plugin.set_stream_url('http://mtaintl.mpl.miisolutions.net:1935/mtaintl-live-1/_definst_/mp4:Original300k.stream/playlist.m3u8')
 
 ##############
 ## Antena 3 ##
