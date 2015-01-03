@@ -3,96 +3,19 @@ import simplejson
 from channel import BaseChannel, ChannelException,ChannelMetaClass, STATUS_BAD, STATUS_GOOD, STATUS_UGLY
 from utils import *
 
-#############
-## Arirang ##
-#############
-
-class Arirang(BaseChannel):
-    playable = True
-    short_name = 'arirang_world'
-    long_name = 'Arirang TV World'
-    default_action = 'play_stream' 
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://worldlive-ios.arirang.co.kr/arirang/arirangtvworldios.mp4.m3u8')
-        
-############
-## Al Aan ##
-############
-        
-class AlAan(BaseChannel):
-    playable = True
-    short_name = 'alaan'
-    long_name = 'Al Aan'
-    default_action = 'play_stream'
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://alaan_hls-lh.akamaihd.net/i/alaan_ar@103399/master.m3u8')
 
 ##############
-## Antena 3 ##
+## MTA ##
 ##############
 
 class Antena3(BaseChannel):
     playable = True
-    short_name = 'antena3'
-    long_name = 'Antena 3'
+    short_name = 'MTA'
+    long_name = 'MTA International'
     default_action = 'play_stream'
 
     def action_play_stream(self):
-        self.plugin.set_stream_url('rtmp://93.115.84.226:1935/live playpath=a3 swfUrl=http://static.ls-cdn.com/player/5.10/livestation-player.swf swfVfy=1 live=1')
-
-#############
-## Al Alam ##
-#############
-
-class AlAlam(BaseChannel):
-    playable = False
-    short_name = 'alalam'
-    long_name = 'Al Alam'
-    default_action = 'list_streams'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'rtmp://hd6.lsops.net/live/ playpath=alalam_ar_1428 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd6.lsops.net/live playpath=alalam_ar_584 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://hd6.lsops.net/live playpath=alalam_ar_162 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://hd6.lsops.net/live/alalam_ar_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
-
-##################
-## AlJazeera AR ##
-##################
-
-class AlJazeeraArabic(BaseChannel):
-    playable = False
-    short_name = 'aljazeera_ar'
-    long_name = 'Al Jazeera Arabic'
-    default_action = 'list_streams'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-	data.update({'action': 'play_stream', 'Title': 'High Quality', 'stream_url': 'rtmp://hd3.lsops.net/live playpath=aljazeer_ar_838 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd3.lsops.net/live playpath=aljazeer_ar_372 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://hd3.lsops.net/live playpath=aljazeer_ar_145 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://hd3.lsops.net/live/aljazeer_ar_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
+        self.plugin.set_stream_url('http://mtaintl.mpl.miisolutions.net:1935/mtaintl-live-1/_definst_/mp4:Original300k.stream/playlist.m3u8')
 
 ##################
 ## AlJazeera EN ##
