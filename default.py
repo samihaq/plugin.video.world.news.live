@@ -15,7 +15,7 @@ except:
 __plugin__ = "World News Live SAMI UL HAQ"
 __author__ = 'Florian Neagu <michaelneagu@gmail.com>'
 __url__ = 'http://world-news-live.googlecode.com/svn/trunk'
-__date__ = '1-10-2013'
+__date__ = '1-1-2015'
 __version__ = '1.0'
 __settings__ = xbmcaddon.Addon(id='plugin.video.sami.live.tv')
 
