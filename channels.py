@@ -16,6 +16,19 @@ class AlAan(BaseChannel):
     def action_play_stream(self):
         self.plugin.set_stream_url('http://mtaintl.mpl.miisolutions.net:1935/mtaintl-live-1/_definst_/mp4:Original300k.stream/playlist.m3u8')
 
+############
+## TEN Cricket ##
+############
+        
+class AlAan(BaseChannel):
+    playable = True
+    short_name = 'TEN'
+    long_name = 'TEN Cricket'
+    default_action = 'play_stream'
+
+    def action_play_stream(self):
+        self.plugin.set_stream_url('http://dittotv.live-s.cdn.bitgravity.com/cdn-live/_definst_/dittotv/secure/ten_cricket_3G.smil/playlist.m3u8?e=1420282877&a=IN,AE,SA,SG,AU,NZ,KW,QA,OM,TH,VN,JP,ID,MY,PK,BD,LK,AF,NP,MM,CY,ID&h=edfc09e8871d9e810ccb2c6e3d2e2826')
+
 ##################
 ## AlJazeera EN ##
 ##################
