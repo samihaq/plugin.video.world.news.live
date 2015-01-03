@@ -16,8 +16,8 @@ __plugin__ = "World News Live SAMI UL HAQ"
 __author__ = 'Florian Neagu <michaelneagu@gmail.com>'
 __url__ = 'http://world-news-live.googlecode.com/svn/trunk'
 __date__ = '1-10-2013'
-__version__ = '1.2.7'
-__settings__ = xbmcaddon.Addon(id='plugin.video.world.news.live')
+__version__ = '1.0'
+__settings__ = xbmcaddon.Addon(id='plugin.video.sami.live.tv')
 
 
 
@@ -25,7 +25,7 @@ class WorldNewsLivePlugin(object):
         
     
     def connect_to_db(self):
-        path = xbmc.translatePath('special://profile/addon_data/plugin.video.world.news.live/')
+        path = xbmc.translatePath('special://profile/addon_data/plugin.video.sami.live.tv/')
         if not os.path.exists(path):
             os.makedirs(path)
         self.db_conn = sqlite.connect(os.path.join(path, 'custom_streams.db'))
