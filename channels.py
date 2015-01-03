@@ -28,7 +28,31 @@ class AlAan(BaseChannel):
 
     def action_play_stream(self):
         self.plugin.set_stream_url('http://dittotv.live-s.cdn.bitgravity.com/cdn-live/_definst_/dittotv/secure/ten_cricket_3G.smil/playlist.m3u8?e=1420282877&a=IN,AE,SA,SG,AU,NZ,KW,QA,OM,TH,VN,JP,ID,MY,PK,BD,LK,AF,NP,MM,CY,ID&h=edfc09e8871d9e810ccb2c6e3d2e2826')
+##################
+## DRAMA Channels ##
+##################
 
+class Dramachannels(BaseChannel):
+    playable = False
+    short_name = 'Drama'
+    long_name = 'Drama Channels'
+    default_action = 'list_streams'
+    
+    def action_list_streams(self):
+        data = {}
+        data.update(self.args)
+	data.update({'action': 'play_stream', 'Title': 'ZEE TV', 'stream_url': 'http://dittotv.live-s.cdn.bitgravity.com/cdn-live/_definst_/dittotv/secure/zee_tv_apac_3G.smil/playlist.m3u8?e=1420284651&a=AU,NZ,SG,TH,VN,JP,ID,MY,PK,BD,LK,AF,NP,MM,CY,ID&h=864002e76b4a9f7b35239a9b5e138d21'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/ playpath=aljazeera_eng_med swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live/ playpath=aljazeera_eng_low swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
+        self.plugin.add_list_item(data, is_folder=False)
+        #data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://hd2.lsops.net/live/aljazeer_en_hls.smil/playlist.m3u8'})
+        #self.plugin.add_list_item(data, is_folder=False)
+        self.plugin.end_list()
+
+    def action_play_stream(self):        
+        self.plugin.set_stream_url(self.args['stream_url'])
 ##################
 ## AlJazeera EN ##
 ##################
