@@ -68,69 +68,6 @@ class AlJazeeraEnglish(BaseChannel):
 
 #    def action_play_stream(self):        
 #        self.plugin.set_stream_url(self.args['stream_url'])
-        
-#################
-## Al Mayadeen ##
-#################
-
-class VoAPersian(BaseChannel):
-    playable = False
-    short_name = 'almayadeen'
-    long_name = 'Al Mayadeen'
-    default_action = 'list_streams'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd2.lsops.net/live playpath=almayade_ar_485 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://hd2.lsops.net/live playpath=almayade_ar_183 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://hd2.lsops.net/live/almayade_ar_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
-        
-#################
-## Al Nabaa TV ##
-#################
-
-class VoAPersian(BaseChannel):
-    playable = False
-    short_name = 'alnabaa'
-    long_name = 'Al Nabaa TV'
-    default_action = 'list_streams'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Standard Quality', 'stream_url': 'rtmp://alnabaa.lsops.net/live/ playpath=alnabaa_ar_584 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://alnabaa.lsops.net/live/ playpath=alnabaa_ar_364 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://alnabaa.lsops.net/live/ playpath=alnabaa_ar_162 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://alnabaa.lsops.net/live/alnabaa_ar_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
-
-##############
-## ABC News ##
-##############
-        
-class ABCNEWS(BaseChannel):
-    playable = True
-    short_name = 'abcnews'
-    long_name = 'ABC News'
-    default_action = 'play_stream'
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200')
 
 ###############
 ## ABCNews24 ##
@@ -153,19 +90,6 @@ class ABCNews24(BaseChannel):
 
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
-
-################
-## BBC Arabic ##
-################
-        
-class BBCARABIC(BaseChannel):
-    playable = True
-    short_name = 'bbc_arabic'
-    long_name = 'BBC Arabic'
-    default_action = 'play_stream'
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://wpc.C1A9.edgecastcdn.net/hls-live/20C1A9/bbc_ar/ls_satlink/b_,264,528,828,.m3u8')
 
 ##############
 ## BBC News ##
@@ -221,10 +145,6 @@ class RT(BaseChannel):
         data.update(self.args)
         data.update({'action': 'play_stream', 'Title': 'Global', 'stream_url': 'http://odna.octoshape.net/f3f5m2v4/cds/smil:ch1_auto.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'http://odna.octoshape.net/f3f5m2v4/cds/smil:ch2_auto.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://odna.octoshape.net/f3f5m2v4/cds/smil:ch3_auto.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'America', 'stream_url': 'http://odna.octoshape.net/f3f5m2v4/cds/smil:ch4_auto.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'Documentaries', 'stream_url': 'http://odna.octoshape.net/f3f5m2v4/cds/smil:ch5_auto.smil/playlist.m3u8'})
@@ -249,12 +169,6 @@ class i24news(BaseChannel):
         data.update(self.args)
         data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_english/398/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_french/412/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_arabic/391/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
     
@@ -271,24 +185,9 @@ class EuroNews(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/ar_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/en_video750_rtp.sdp'})
         self.plugin.add_list_item(data, is_folder=False)
-	data.update({'action': 'play_stream', 'Title': 'French', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/fr_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'German', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/de_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Italian', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/it_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Portuguese', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/pt_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Russian', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/ru_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Spanish', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/es_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Turkish', 'stream_url': 'rtsp://fr-par-3.stream-relay.hexaglobe.net/rtpeuronewslive/tr_video750_rtp.sdp'})
-        self.plugin.add_list_item(data, is_folder=False)
+
         self.plugin.end_list()
 
     def action_play_stream(self):        
@@ -337,40 +236,6 @@ class REUTERS(BaseChannel):
     def action_play_stream(self):
 	self.plugin.set_stream_url('http://37.58.85.156/rlo001/ngrp:rlo001.stream_all/playlist.m3u8')
 
-########
-## UT ##
-########	
-
-class UT(BaseChannel):
-    playable = True
-    short_name = 'ut'
-    long_name = 'Ukraine Today'
-    default_action = 'play_stream'
-    
-    def action_play_stream(self):
-	self.plugin.set_stream_url('http://stream2g01-g50.1plus1.ua/380555/smil:380555.smil/playlist.m3u8')
-
-################
-## Rai News24 ##
-################
-
-class RAINEWS24(BaseChannel):
-    playable = False
-    short_name = 'rainews24'
-    long_name = 'Rai News24 (Geo-restricted)'
-    default_action = 'list_streams'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://rainews.lsops.net/live/ playpath=rainews_it_584 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://rainews.lsops.net/live/rainews_it_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
 
 #############
 ## PressTV ##
@@ -463,11 +328,7 @@ class France24(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Arabic', 'stream_url': 'http://vipwowza.yacast.net/f24_hlslive_ar/smil:iphone.fr24ar.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'English', 'stream_url': 'http://vipwowza.yacast.net/f24_hlslive_en/smil:iphone.fr24en.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Francais', 'stream_url': 'http://vipwowza.yacast.net/f24_hlslive_fr/smil:iphone.fr24fr.smil/playlist.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         self.plugin.end_list()
 
@@ -487,8 +348,6 @@ class DW(BaseChannel):
     def action_list_streams(self):
         data = {}
         data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'DW (Arabia)', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv-arabia/ios/master.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'DW (Asia)', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv-asia/ios/master.m3u8'})
         self.plugin.add_list_item(data, is_folder=False)
         data.update({'action': 'play_stream', 'Title': 'DW (Europe)', 'stream_url': 'http://www.metafilegenerator.de/DWelle/tv-europa/ios/master.m3u8'})
@@ -500,30 +359,6 @@ class DW(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
         
-#################
-## VoA Persian ##
-#################
-
-class VoAPersian(BaseChannel):
-    playable = False
-    short_name = 'voapersian'
-    long_name = 'VoA Persian'
-    default_action = 'list_streams'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data.update({'action': 'play_stream', 'Title': 'Medium Quality', 'stream_url': 'rtmp://hd4.lsops.net/live playpath=voiceofa_fa_485 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Low Quality', 'stream_url': 'rtmp://hd4.lsops.net/live playpath=voiceofa_fa_183 swfUrl="http://static.ls-cdn.com/player/5.10/livestation-player.swf" swfVfy=true live=true'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'action': 'play_stream', 'Title': 'Mobile Quality', 'stream_url': 'http://hd4.lsops.net/live/voiceofa_fa_hls.smil/playlist.m3u8'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-
-    def action_play_stream(self):        
-        self.plugin.set_stream_url(self.args['stream_url'])
-
 ########################
 ## The People's Voice ##
 ########################    
@@ -608,19 +443,6 @@ class CNN(BaseChannel):
     def action_play_stream(self):        
         self.plugin.set_stream_url(self.args['stream_url'])
 
-##############
-## 24 Vesti ##
-##############
-
-class VESTI(BaseChannel):
-    playable = True
-    short_name = '24vesti'
-    long_name = '24 Vesti'
-    default_action = 'play_stream'
-    
-    def action_play_stream(self):
-	self.plugin.set_stream_url('mms://62.162.58.55/24vesti')
-	
 ###############
 ## NDTV 24x7 ##
 ###############
@@ -633,44 +455,5 @@ class NDTV(BaseChannel):
 
     def action_play_stream(self):
         self.plugin.set_stream_url('rtmp://ndtv.lsops.net/live/ playpath=ndtv_en_364 swfUrl=http://static.ls-cdn.com/player/5.10/livestation-player.swf swfVfy=1 live=1')
-        
-###################
-## tagessschau24 ##
-###################
 
-class Tagesschau24(BaseChannel):
-    playable = True
-    short_name = 'tagesschau24'
-    long_name = 'tagesschau24'
-    default_action = 'play_stream' 
-
-    def action_play_stream(self):
-        self.plugin.set_stream_url('http://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8')
-    
-###########
-## CSpan ##
-###########
-
-class CSpan(BaseChannel):
-    playable = False
-    short_name = 'cspan_en'
-    long_name = 'CSPAN'
-    default_action = 'list_streams'
-    swf_url = 'http://www.c-span.org/cspanVideoHD.swf'
-    
-    def action_list_streams(self):
-        data = {}
-        data.update(self.args)
-        data['action'] = 'play_stream'
-        data.update({'stream_url': "rtmp://cp82346.live.edgefcs.net/live/CSPAN1@14845", 'Title': 'CSPAN1'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "rtmp://cp82347.live.edgefcs.net/live/CSPAN2@14846", 'Title': 'CSPAN2'})
-        self.plugin.add_list_item(data, is_folder=False)
-        data.update({'stream_url': "rtmp://cp82348.live.edgefcs.net/live/CSPAN3@14847", 'Title': 'CSPAN3'})
-        self.plugin.add_list_item(data, is_folder=False)
-        self.plugin.end_list()
-        
-        
-    def action_play_stream(self):
-        parser = URLParser(swf_url = self.swf_url)
-        self.plugin.set_stream_url(parser(self.args['stream_url']))          
+   
